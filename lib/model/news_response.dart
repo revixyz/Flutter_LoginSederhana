@@ -52,6 +52,8 @@ class Article{ // membuat class Article
     content = data['content']; //'content' identifier dalam json atau key
   }
 
+  get imageUrl => null;
+
   Map<String, dynamic> toJson() { // mengubah object menjadi map
     if (source != null) { // jika source tidak null
       source!.toJson(); // mengubah object source menjadi map
@@ -89,6 +91,14 @@ class NewsResponse{ // membuat class NewsResponse
       });
     }
   }
+
+  get message => null;
+
+  get urlToImage => null;
+
+  get title => null;
+
+  get description => null;
   Map<String, dynamic> toJson() { // mengubah object menjadi map
     final Map<String, dynamic> data = <String, dynamic>{}; // membuat map kosong
     data['status'] = status; // mengisi map dengan key dan value

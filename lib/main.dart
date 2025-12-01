@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => LoginPage(),
         '/presensi': (context) => Presensi(),
         '/berita': (context) => Berita(),
-        '/news': (context) => NewsScreen(),
+        '/news': (context) => NewsScreens(),
       },
     );
   }
