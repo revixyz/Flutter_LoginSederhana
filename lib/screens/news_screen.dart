@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:login_app/model/news_response.dart';
+import 'detail_screen.dart';
 
 class NewsScreens extends StatefulWidget {
   const NewsScreens({super.key});
@@ -42,7 +43,7 @@ class _NewsScreensState extends State<NewsScreens> {
         var message = newsresponse.message;
         throw Exception(message);
       }
-    } catch (e) {
+    } catch (e) { 
       throw Exception(e);
     }
   }
@@ -63,7 +64,17 @@ class _NewsScreensState extends State<NewsScreens> {
         itemCount: articles.length,
         itemBuilder: (context, index) {
           var article = articles[index];
-          return Card(
+
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailScreen(article: article),
+                ),
+              );
+            },
+            child:  Card(
             margin: const EdgeInsets.all(8.0),
             child: ListTile(
               leading: article.urlToImage != null
@@ -80,6 +91,8 @@ class _NewsScreensState extends State<NewsScreens> {
                           size: 25,
                         ),
                       ),
+
+                      
                     )
                   : Container(
                       width: 100,
@@ -92,7 +105,9 @@ class _NewsScreensState extends State<NewsScreens> {
               title: Text(article.title ?? 'No Title'),
               subtitle: Text(article.description ?? 'No Description'),
             ),
+          )
           );
+          
         },
       );
     }

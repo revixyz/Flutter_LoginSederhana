@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter App',
-      initialRoute: '/',
+      initialRoute: '/', //untuk menentukan halaman awal
       routes: {
         '/': (context) => LoginPage(),
         '/presensi': (context) => Presensi(),
