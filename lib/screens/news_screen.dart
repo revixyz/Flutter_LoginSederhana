@@ -22,7 +22,7 @@ class _NewsScreensState extends State<NewsScreens> {
 
   Future<List<Article>?> getNews() async {
     var endpoint = "everything";
-    var apiKey = "0f217dfd60c84001a1857f393dcbe32d";
+    var apiKey = "YOUR_API_KEY";
     var query = "crime";
 
     try {
